@@ -4,7 +4,7 @@ const routes = express.Router()
 
 
 // ==========User`s routes================
-routes.get('/user',(req,res)=>{
+routes.get('/users',(req,res)=>{
     users.fetchUsers(req,res)
 })
 
@@ -13,7 +13,7 @@ routes.get('/user/:id',(req,res)=>{
 })
 
 routes.post('/register',bodyParser.json(),(req,res)=>{
-    users.updateUser(req,res)
+    users.registerUser(req,res)
 })
 
 routes.patch('/user/:id',bodyParser.json(),(req,res)=>{
