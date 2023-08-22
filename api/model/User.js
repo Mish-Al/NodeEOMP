@@ -4,7 +4,7 @@ const {hash ,compare ,hashSync} = require('bcrypt')
 class Users{
     fetchUsers(req,res){
         const query = `
-        SELECT userID, firstName ,lastName,userAge,userRole,emailAdd,userPass,userProfile
+        SELECT userID, firstName ,lastName , userAge, userRole, emailAdd, userPass, userProfile
         FROM Users;
         `
         db.query(query,(err,results)=>{
@@ -43,7 +43,7 @@ class Users{
             if(!results?.length){
                 res.json({
                     status: res.statusCode,
-                    msg: "The email you provided is incorrect"
+                    msg: "The email you provided is incorrect."
                 })
             }else{
                 await compare(userPass,results[0].userPass,(cErr,cResults)=>{
@@ -61,7 +61,7 @@ class Users{
                         res.json({
                             msg: "Logged in",
                             token,
-                            results :results[0]
+                            results: results[0]
                         })
                     }else{
                         res.json({
