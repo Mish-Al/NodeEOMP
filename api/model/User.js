@@ -29,7 +29,7 @@ class Users{
             })
         })
     }
-   async registerUser(req,res){
+   async register(req,res){
     const data  = req.body
         data.userPass = await hash(data.userPass, 15)
         // payload
