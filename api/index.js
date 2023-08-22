@@ -33,7 +33,10 @@ app.use(cookieParser(),cors(),routes);
 app.use(express.json(),
 express.urlencoded({
     extended: false,
-})
+}), 
+cookieParser(),
+cors(),
+routes
 );
 // handling all errors
 app.use(errorHandling);
