@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const {verifyAToken} = require('../middleware/AuthenticateUser')
 const routes = express.Router()
+const {users, products, orders} = require('../model')
 
 
 // ==========User`s routes================
@@ -34,5 +36,6 @@ routes.post('/login',bodyParser.json(),(req,res)=>{
 
 module.exports = {
     express,
-    routes
+    routes,
+    verifyAToken
 }
