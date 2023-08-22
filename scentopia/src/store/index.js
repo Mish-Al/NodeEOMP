@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
-const scentopiaUrl = "";
+const scentopiaUrl = "https://scentopia.onrender.com/";
 export default createStore({
   state: {
     users: null,
@@ -38,12 +38,20 @@ export default createStore({
   actions: {
     async fetchUsers(context) {
       try {
-        const { data } = await axios.get(`${challengerUrl}users`);
+        const { data } = await axios.get(`${scentopiaUrl}users`);
         context.commit("setUsers", data.results);
       } catch (e) {
         context.commit("setMsg", "An error has occured");
       }
     },
+    async fetchProducts(context) {
+      try {
+        const { data } = await axios.get(`${scentopiaUrl}products`);
+        context.commit("setProducts", data.results);
+      } catch (e) {
+        context.commit("setMsg", "There was an error")
+      }
+    }   
   },
   modules: {},
 });

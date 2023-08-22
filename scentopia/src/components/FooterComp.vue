@@ -2,6 +2,8 @@
     <div>
       <footer class="feet">
         <p>© Copyright {{ cYear }}</p>
+        <p>Built by</p>
+        <p>Mish-Al Taliep & Imtiyaaz Damon</p>
       </footer>
     </div>
   </template>
@@ -17,15 +19,10 @@
   </script>
     
     <style scoped>
-  .feet {
-    background-color: #1b4965;
-    padding: 0;
+  .feet{
+    background-color: #EAC7A1;
     text-align: center;
-    color: #bee9e8;
-    margin: 0;
-    /* position: sticky; */
-    border: 2px solid #62b6cb;
-    border-radius: 5px;
+    color: #553a1d;
   }
   
   .bi:hover {

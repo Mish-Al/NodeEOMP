@@ -74,22 +74,21 @@
   
   <style scoped>
   .navbar {
-    background-color: #ddf1f4;
-    border: 2px solid #1b4965;
-    border-radius: 5px;
+    background-color: #D09869;
+    /* border: 2px solid #1b4965; */
   }
   .navbar-toggler {
-    border: 2px ridge #1b4965;
+    border: 2px ridge #F7DFB1;
   }
   #logo {
     height: 6rem;
-    background-color: #cae9ff;
+    background-color: #D09869;
   }
   .offcanvas-body {
-    background-color: #ddf1f4;
+    background-color: #D09869;
   }
   .offcanvas-header {
-    background-color: #ddf1f4;
+    background-color: #D09869;
   }
   img {
     height: 6rem;
@@ -101,11 +100,12 @@
   }
   
   .nav-link {
-    color: grey;
+    color: #F7DBF1;
     font-weight: 700;
   }
   .nav-link:hover {
-    color: #5fa8d3;
+    color: #a38550
+;
   }
   
   li {
