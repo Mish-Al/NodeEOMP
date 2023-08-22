@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors')
 // Importing error handling middlware
 const cookieParser = require('cookie-parser')
-const errorHandling = require('./middleware/ErrorHandling.js')
+// const errorHandling = require('./middleware/ErrorHandling.js')
 const port = +process.env.PORT || 3131
 
 // static
@@ -39,7 +39,7 @@ cors(),
 routes
 );
 // handling all errors
-app.use(errorHandling);
+// app.use(errorHandling);
 app.listen(port,()=>{
     console.log(`The server is running on port ${port}`);
 })
