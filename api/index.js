@@ -4,6 +4,7 @@ const app = express()
 const cors = require('cors')
 // Importing error handling middlware
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 // const errorHandling = require('./middleware/ErrorHandling.js')
 const port = +process.env.PORT || 3131
 
@@ -38,6 +39,19 @@ cookieParser(),
 cors(),
 routes
 );
+
+// add products to api
+app.post('/products',bodyParser.json(),(req,res)=>{
+    const query =`INSERT INTO Products SET ?;`
+    db.query(query,[req.body],
+        (err)=>{
+            if(err) throw err;
+            res.json({
+                status:STATUS_CODES,
+                msg:" A Product has been added"
+            })
+        })
+})
 // handling all errors
 // app.use(errorHandling);
 app.listen(port,()=>{
