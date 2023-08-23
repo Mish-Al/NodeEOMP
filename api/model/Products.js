@@ -9,7 +9,7 @@ class Products{
         db.query(query, (err,results)=>{
             if(err) throw err
             res.json({
-                status:statusCode,
+                status: res.statusCode,
                 results
             })
         })
@@ -22,7 +22,7 @@ class Products{
         db .query(query,(err,results)=>{
             if(err) throw err
             res.json({
-                status:statusCode,
+                status:res.statusCode,
                 results
             })
         })
@@ -35,10 +35,12 @@ class Products{
         db.query(query,(err,results)=>{
             if(err) throw err
             res.json({
-                status: statusCode,
+                status: res.statusCode,
                 results
             })
         })
     }
-
 }
+
+
+module.exports = Products
