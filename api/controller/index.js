@@ -33,6 +33,30 @@ routes.delete('/user/:id',(res,req)=>{
 routes.post('/login',bodyParser.json(),(req,res)=>{
     user.login(req,res)
 })
+// ==========Product`s routes==========
+routes.get('/products',(req,res)=>{
+    products.fetchProducts(req,res)
+})
+
+routes.get('/products/:id',(req,res)=>{
+    products.fetchProduct(req,res)
+})
+
+routes.post('/register',bodyParser.json(),(req,res)=>{
+    products.fetchProducts(req,res)
+})
+
+routes.put('/products/:id',bodyParser.json(),(req,res)=>{
+    products.fetchProducts(req,res)
+})
+
+routes.patch('/products/:id',bodyParser.json(),(res,req)=>{
+    products.fetchProduct(req,res)
+})
+
+routes.delete('/products/:id',bodyParser.json(),(req,res)=>{
+    products.fetchProduct(req,res)
+})
 
 module.exports = {
     express,

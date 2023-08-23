@@ -1,4 +1,5 @@
 const {express,routes} = require('./controller')
+const db = require('./config')
 const path = require('path')
 const app = express()
 const cors = require('cors')
@@ -42,12 +43,12 @@ routes
 
 // add products to api
 app.post('/products',bodyParser.json(),(req,res)=>{
-    const query =`INSERT INTO Products SET ?;`
+    const query =`INSERT INTO Products SET?;`
     db.query(query,[req.body],
         (err)=>{
             if(err) throw err;
             res.json({
-                status:STATUS_CODES,
+                status: res.statusCode,
                 msg:" A Product has been added"
             })
         })
