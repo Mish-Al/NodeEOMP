@@ -1,18 +1,21 @@
 <template>
     <div>
-        <Contact/>
+        <h3>Talk To Us</h3>
+        <ContactComp/>
     </div>
 </template>
 
 <script>
-import Contact from "@/components/Contact.vue";
+import ContactComp from "@/components/ContactComp.vue";
     export default {
         components: {
-            Contact
+            ContactComp
         }
     }
 </script>
 
 <style scoped>
-
+h3{
+    color: #553a1da1;
+}
 </style>
