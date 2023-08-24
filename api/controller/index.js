@@ -11,7 +11,7 @@ routes.get('/users',(req,res)=>{
 })
 
 routes.get('/user/:id',(req,res)=>{
-    user.fetchUser(req,res)
+    users.fetchUser(req,res)
 })
 
 routes.post('/register',bodyParser.json(),(req,res)=>{
@@ -31,7 +31,7 @@ routes.delete('/user/:id',(res,req)=>{
 })
 
 routes.post('/login',bodyParser.json(),(req,res)=>{
-    user.login(req,res)
+    users.login(req,res)
 })
 // ==========Product`s routes==========
 routes.get('/products',(req,res)=>{
