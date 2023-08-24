@@ -1,13 +1,13 @@
 import { createStore } from "vuex";
-import axios from "axios";
-const scentopiaUrl = "https://scentopia.onrender.com/";
+import axios from "axios"
+const scentopiaUrl = "https://scentopia-555a.onrender.com/"
 export default createStore({
   state: {
     users: null,
     user: null,
     products: null,
     product: null,
-    spinner: false,
+    spinner: null,
     token: null,
     msg: null,
   },
@@ -27,13 +27,7 @@ export default createStore({
     },
     setSpinner(state, value) {
       state.spinner = value;
-    },
-    setToken(state, token) {
-      state.token = token;
-    },
-    setMsg(state, msg) {
-      state.msg = msg;
-    },
+    }
   },
   actions: {
     async fetchUsers(context) {
@@ -49,9 +43,17 @@ export default createStore({
         const { data } = await axios.get(`${scentopiaUrl}products`);
         context.commit("setProducts", data.results);
       } catch (e) {
-        context.commit("setMsg", "There was an error")
+        alert(e.message);
       }
-    }   
+    } ,  
+    async fetchProduct(context,prodID) {
+      try {
+        const { data } = await axios.get(`${scentopiaUrl}products/${prodID}`);
+        context.commit("setProduct", data.result);
+      } catch (e) {
+        alert(e.message);
+      }
+    } ,  
   },
   modules: {},
 });

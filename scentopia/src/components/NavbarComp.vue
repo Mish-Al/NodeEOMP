@@ -4,7 +4,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
-              src="https://i.postimg.cc/8cM31QCS/Screenshot-2023-07-01-122816.png"
+              src="https://i.postimg.cc/D0fSWjBy/Screenshot-2023-08-23-195222-clipdrop-background-removal.png"
               id="logo"
           /></a>
           <button
@@ -26,7 +26,8 @@
             <div class="offcanvas-header">
               <a class="offcanvas-title" id="offcanvasNavbarLabel"
                 ><img
-                  src="https://i.postimg.cc/8cM31QCS/Screenshot-2023-07-01-122816.png"
+                  src="https://i.postimg.cc/D0fSWjBy/Screenshot-2023-08-23-195222-clipdrop-background-removal.png"
+                  href=""
                   alt="logo"
               /></a>
               <button
@@ -77,12 +78,12 @@
     background-color: #D09869;
     /* border: 2px solid #1b4965; */
   }
+  #offcanvasNavbarLabel img{
+    width: 18rem;
+    height: 7%;
+  }
   .navbar-toggler {
     border: 2px ridge #F7DFB1;
-  }
-  #logo {
-    height: 6rem;
-    background-color: #D09869;
   }
   .offcanvas-body {
     background-color: #D09869;
@@ -91,7 +92,7 @@
     background-color: #D09869;
   }
   img {
-    height: 6rem;
+    height: 4rem;
   }
   #navbarNav {
     display: flex;
