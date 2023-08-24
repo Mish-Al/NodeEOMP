@@ -44,7 +44,7 @@ class Users{
         `
         db.query(query, [data],(err)=>{
             if(err) throw err
-            //CReate Token
+            //Create Token
             let token = createToken(user)
             // res.cookies("LegitUser", token,
             // {
@@ -53,6 +53,7 @@ class Users{
             // })
             res.json({
                 status: res.statusCode,
+                token,
                 msg:"you are now registered."
             })
         })
@@ -103,26 +104,40 @@ class Users{
             }
         })
     }
-    updateUser(req, res){
-        const data = req.body
-        if(data.userPass){
-            data.userPass = 
-            hashSync(data.userPass, 15)
-        }
+    // updateUser(req, res){
+    //     const data = req.body
+    //     if(data.userPass){
+    //         data.userPass = 
+    //         hashSync(data.userPass, 15)
+    //     }
+    //     const query = `
+    //     UPDATE Users SET ?
+    //     WHERE userID = ?
+    //     `
+    // }
+    updateUser(req, res) {
         const query = `
-        UPDATE Users SET ?
-        WHERE userID = ?
-        `
+          UPDATE Users
+          SET ?
+          WHERE userID = ?;
+        `;
+        db.query(query, [req.body, req.params.id], (err) => {
+            if (err) throw err;
+            res.json({
+                status: res.statusCode,
+                msg: 'The user record was updated.',
+            });
+        });
     }
     deleteUser(req, res){
         const query = 
         `
-        DELETE FROM Users WHERE UserID = ${req.params.id};
+        DELETE FROM Users WHERE userID = ?;
         `
-        db.query(query,(err)=>{
+        db.query(query, [req.params.id],(err)=>{
             if(err) throw err
             res.json({
-                status:statusCode,
+                status: res.statusCode,
                 msg: "A user record was deleted"
             })
         })

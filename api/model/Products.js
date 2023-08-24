@@ -29,10 +29,10 @@ class Products{
     }
     deleteProducts(req,res){
         const query = `
-        SELECT prodID , prodName ,quantity ,amount ,Category,prodUrl
-        FROM Products WHERE prodID = ${req.params.id};
-        `
-        db.query(query,(err,results)=>{
+        DELETE FROM Products 
+        WHERE prodID = ?
+        `;
+        db.query(query,[req.params.id],(err,results)=>{
             if(err) throw err
             res.json({
                 status: res.statusCode,
@@ -40,9 +40,22 @@ class Products{
             })
         })
     }
+    addProduct(req, res){
+        const query = `
+            INSERT INTO Products SET ?
+        `
+        db.query(query, [req.body], (err)=>{
+            if (err) throw err
+            res.json({
+                status: res.statusCode,
+                msg:"Product added successfully"
+            })
+        })
+    }
     updateProducts(req,res){
         const query =`
-        INSERT INTO Products SET?;
+        UPDATE  Products SET ?
+        WHERE prodID = ${req.params.id};
         `
         db.query(query,[req.body],(err)=>{
             if(err) throw err
