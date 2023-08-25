@@ -46,11 +46,6 @@ class Users{
             if(err) throw err
             //Create Token
             let token = createToken(user)
-            // res.cookies("LegitUser", token,
-            // {
-            //     maxAge: 3600000,
-            //     httpOnly: true
-            // })
             res.json({
                 status: res.statusCode,
                 token,
@@ -81,13 +76,6 @@ class Users{
                     const token = createToken({
                         emailAdd, userPass
                     })
-                    // Save a token
-                    // res.cookies("LegitUser",
-                    // token,{
-                    //     maxAge: 3600000,
-                    //     httpOnly: true
-                    // }
-                    // )
                     if(cResults){
                         res.json({
                             msg: "logged in",
@@ -104,17 +92,7 @@ class Users{
             }
         })
     }
-    // updateUser(req, res){
-    //     const data = req.body
-    //     if(data.userPass){
-    //         data.userPass = 
-    //         hashSync(data.userPass, 15)
-    //     }
-    //     const query = `
-    //     UPDATE Users SET ?
-    //     WHERE userID = ?
-    //     `
-    // }
+    
     updateUser(req, res) {
         const query = `
           UPDATE Users
