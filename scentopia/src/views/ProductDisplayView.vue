@@ -1,5 +1,5 @@
 <template>
-  <div class="anything" v-for="product in products" :key="product.prodID">
+  <div class="anything" v-if="product">
       <div class="card" style="width: 18rem">
         <img
           :src="product.prodUrl"
@@ -13,26 +13,51 @@
         </div>
       </div>
     </div>
+    <div v-else>
+      <p>Loading...</p>
+    </div>
 </template>
 
 <script>
 import axios from 'axios';
+// import { mapGetters } from 'vuex';
+
 export default {
-    props: ["prodID"],
+    // props: ["prodID"],
     computed: {
+      // products() {
+      //   return this.$store.state.products
+      // },
       product() {
         return this.$store.state.product
-      },
+      }
+        // ...mapGetters(['getProduct']),
+        // product(){
+        //   return this.getProduct
+        // },
+        // prodID(){
+        //   return this.$route.params.prodID
+        // }
     },
     created() {
-       this.$store.dispatch("fetchProduct", this.prodID)
+      //  this.$store.dispatch("fetchProduct", this.prodID)
+      // this.fetchProduct(this.prodID)
+    },
+    mounted() {
+      this.$store.dispatch('fetchProduct', this.$route.params.prodID)
     },
     methods: {
-      fetchProducts() {
-        axios.get('https://scentopia.onrender.com/products/:id').then(res =>{
-          console.log(res)
-        })
-      }
+      // singleProd(prodID) {
+      //   const single = this.prod
+      // }
+      // async fetchProduct(prodID){
+      //   try {
+      //     const response = await this.$store.dispatch('fetchProduct', prodID)
+      //     console.log('Product', response);
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      // }
     }
   };
 </script>

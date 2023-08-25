@@ -1,6 +1,9 @@
 <template>
   <div>
   <NavbarComp />
+  <FilterComp @filter-applied="applyFilter"/>
+  <SearchComp @search-peformed="performSearch"/>
+  <ResultsComp :searchResults = "results"/>
   <main>
     <router-view />
   </main>
@@ -10,12 +13,31 @@
 <script>
 import NavbarComp from "@/components/NavbarComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
+import SearchComp from "./components/SearchComp.vue";
+import FilterComp from "./components/FilterComp.vue";
+import ResultsComp from "./components/ResultsComp.vue";
+import axios from 'axios';
 
 export default {
   components: {
     NavbarComp,
     FooterComp
   },
+  // data() {
+  //   return {
+  //     res
+  //   }
+  // },
+  // methods: {
+  //   applyFilter(selectedFilter) {
+
+  //   },
+  //   performSearch(searchQuery) {
+  //     axios.get(`/search?query=${searchQuery}`).then(res => {
+  //       this.results = res.data;
+  //     })
+  //   }
+  // }
 };
 </script>
 
