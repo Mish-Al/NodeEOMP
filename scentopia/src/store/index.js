@@ -11,7 +11,11 @@ export default createStore({
     token: null,
     msg: null,
   },
-  getters: {},
+  getters: {
+    getProduct(state){
+      return state.singleProd
+    }
+  },
   mutations: {
     setUsers(state, users) {
       state.users = users;
@@ -27,6 +31,9 @@ export default createStore({
     },
     setSpinner(state, value) {
       state.spinner = value;
+    },
+    addProduct(state, product) {
+      state.product = product;
     }
   },
   actions: {
@@ -48,12 +55,39 @@ export default createStore({
     } ,  
     async fetchProduct(context,prodID) {
       try {
-        const { data } = await axios.get(`${scentopiaUrl}products/${prodID}`);
-        context.commit("setProduct", data.result);
+        const {data} = await axios.get(`${scentopiaUrl}products/${prodID}`);  
+        const {results} = await data
+        context.commit("setProduct", results[0]);
       } catch (e) {
         alert(e.message);
       }
-    } ,  
+    },
+    async addProduct(context, proddata) {
+      try {
+        const data = await axios.post(`${scentopiaUrl}product`, proddata);
+        context.commit("addProduct", data.result);
+      } catch (e) {
+        alert(e.message);
+      }
+    },
+
+    deleteProduct(prodID) {
+      axios
+        .delete(`https://scentopia.onrender.com/products/${prodID}`)
+        .then((res) => {
+          // Handle successful response
+          console.log(res);
+          this.fetchProducts();
+        })
+        .catch((error) => {
+          // Handle error
+          console.error(error);
+        });
+    },  
+    editProduct(prodID) {
+      axios.put(`https://scentopia.onrender.com/products/${prodID}`)
+    }
   },
   modules: {},
+  
 });

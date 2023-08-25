@@ -1,6 +1,6 @@
 <template>
   <div class="anything" v-for="product in products" :key="product.prodID">
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <img
         :src="product.prodUrl"
         class="card-img-top"
@@ -9,12 +9,12 @@
       <div class="card-body">
         <h5 class="card-title">{{ product.prodName }}</h5>
         <p class="card-text">{{ product.amount }}.</p>
+
         <router-link
-          :to="{ name: 'singleProd', params: { prodID: product.prodID } }"
-          >View</router-link
+          class="btn" :to="{ name: 'singleProd', params: { prodID: product.prodID } }"
+          >View More</router-link
         >
       </div>
-      
     </div>
   </div>
 </template>
@@ -35,13 +35,17 @@ export default {
         console.log(res);
       });
     },
+
+    viewSingle(prodID) {
+      this.$router.push({ name: "singleProd", params: { prodID } });
+    },
   },
 };
 </script>
   <style scoped>
 .btn {
   background-color: #d09869;
-  border: #553a1d;
+  border: 3px solid #553a1d;
   border-radius: 5px;
   color: #f7dfb1;
 }
@@ -76,5 +80,26 @@ export default {
   background-color: #f7dfb1;
   border-radius: 7px;
 }
+.card{
+  display: flex;
+  justify-content: center;
+  background-color: #f7dfb1;
+  color: #553a1d;
+  border-radius: 8px;
+
+  width: 18rem;
+  border: 3px solid  red;
+}
+.anything{
+  border: 3px solid green;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 1rem;
+}
+img{
+  height: 15rem;
+}
+
 </style>
  
