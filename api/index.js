@@ -33,19 +33,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.post('/products',bodyParser.json(),(req,res)=>{
-//     const query =``
-//     db.query(query,[req.body],
-//         (err)=>{
-//             if(err) throw err;
-//             res.json({
-//                 status: res.statusCode,
-//                 msg:" A Product has been added"
-//             })
-//         })
-// })
-// handling all errors
-// app.use(errorHandling);
 app.listen(port, () => {
   console.log(`The server is running on port ${port}`);
 });
