@@ -11,7 +11,6 @@
         <h2>Customer Feedback</h2>
         <TestimonialComp/>
     </div>
-    <br/>
 </template>
 
 <script>

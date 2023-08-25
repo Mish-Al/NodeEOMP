@@ -1,6 +1,6 @@
 <template>
-  <div class="anything" v-for="product in products" :key="product.prodID">
-    <div class="card">
+  <div class="card">
+      <div class="something" v-for="product in products" :key="product.prodID">
       <img
         :src="product.prodUrl"
         class="card-img-top"
@@ -75,7 +75,7 @@ export default {
 
   width: 18rem;
 }
-.anything{
+.someth ing{
   display: flex;
   /* justify-content: center; */
   align-items: center;
