@@ -2,7 +2,7 @@
   <div>
     <button
       type="button"
-      class="btn btn-primary"
+      class="btn"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
@@ -23,7 +23,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -58,7 +58,7 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn">Save changes</button>
           </div>
         </div>
       </div>
@@ -90,4 +90,15 @@ export default {
 </script>
 
 <style scoped>
+.btn{
+  background-color: #d09869;
+  border: 1px solid#553a1d;
+  border-radius: 5px;
+  color: #f7dfb1;
+}
+.btn:hover{
+  background-color: #f7dfb1;
+  color: #d09869;
+  border: 1px solid #553a1d;
+}
 </style>

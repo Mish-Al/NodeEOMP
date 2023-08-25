@@ -27,7 +27,7 @@
               <a class="offcanvas-title" id="offcanvasNavbarLabel"
                 ><img
                   src="https://i.postimg.cc/D0fSWjBy/Screenshot-2023-08-23-195222-clipdrop-background-removal.png"
-                  href=""
+                  href="../views/HomeView.vue"
                   alt="logo"
               /></a>
               <button

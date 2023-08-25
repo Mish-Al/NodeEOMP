@@ -66,20 +66,6 @@ export default {
   color: #d09869;
   border: 1px solid #553a1d;
 }
-.modal-body {
-  background-color: #553a1d;
-  color: #f7dfb1;
-  border-radius: 7px;
-}
-.modal-header {
-  background-color: #f7dfb1;
-  color: #553a1d;
-  border-radius: 7px;
-}
-.modal-footer {
-  background-color: #f7dfb1;
-  border-radius: 7px;
-}
 .card{
   display: flex;
   justify-content: center;
@@ -88,10 +74,8 @@ export default {
   border-radius: 8px;
 
   width: 18rem;
-  border: 3px solid  red;
 }
 .anything{
-  border: 3px solid green;
   display: flex;
   /* justify-content: center; */
   align-items: center;

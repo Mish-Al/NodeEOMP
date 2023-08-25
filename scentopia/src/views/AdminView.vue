@@ -32,7 +32,7 @@
               <td id="amount">{{ product.quantity }}</td>
 
               <td id="del">
-                <button class="del" @click="deleteProduct(product.prodID)">
+                <button class="btn" @click="deleteProduct(product.prodID)">
                   delete
                 </button>
               </td>
@@ -118,6 +118,17 @@ export default {
 </script>
 
 <style scoped>
+.btn{
+  background-color: #d09869;
+  border: #553a1d;
+  border-radius: 5px;
+  color: #f7dfb1;
+}
+.btn:hover{
+  background-color: #f7dfb1;
+  color: #d09869;
+  border: 1px solid #553a1d;
+}
 #id {
   width: 2.9rem;
   background-color: #eac7a1; color: #553a1d

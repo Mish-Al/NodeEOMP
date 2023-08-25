@@ -8,40 +8,40 @@
               alt="iphone"
             />
             <div class="card-body">
-              <h5 class="card-title">Paco Rabanne Invictus Legend Eau de Parfum</h5>
-              <a href="../views/ProductView.vue" class="btn">more info</a>
+              <h5 class="card-title mt-5">Paco Rabanne Invictus Legend Eau de Parfum</h5>
+              <a href="../views/ProductView.vue" class="btn mt-3">more info</a>
             </div>
           </div>
           <div class="card" style="width: 18rem">
             <img
-              src="https://i.postimg.cc/YSvZxbqw/Samsung-Galaxy-S23-Ultra-featured-image-packshot-review-1024x691-removebg-preview.png"
+              src="https://i.postimg.cc/tCWqypLy/xs-pour-homme-eau-de-toilette-spray-100ml-tester-men-paco-rabanne-p177-227-zoom-1-removebg-preview.png"
               class="card-img-top"
               alt="iphone"
             />
             <div class="card-body">
-              <h5 class="card-title">Samsung Galaxy S23 Ultra</h5>
+              <h5 class="card-title">Paco Rabanne xs Pour Homme</h5>
               <a href="../views/ProductView.vue" class="btn">more info</a>
             </div>
           </div>
           <div class="card" style="width: 18rem">
             <img
-              src="https://i.postimg.cc/CLDKcs5k/Oppo-Find-X6-Pro-featured-image-packshot-review-removebg-preview.png"
+              src="https://i.postimg.cc/qvB4tnQB/Versace-Man-Eau-Fraiche-removebg-preview.png"
               class="card-img-top"
               alt="oppo"
             />
             <div class="card-body">
-              <h5 class="card-title">OPPO Find X6 Pro</h5>
+              <h5 class="card-title">Versace Man Eau De Fraiche</h5>
               <a href="../views/ProductView.vue" class="btn">more info</a>
             </div>
           </div>
           <div class="card" style="width: 18rem">
             <img
-              src="https://i.postimg.cc/CxCxgG3D/Google-Pixel-7-featured-image-packshot-review-removebg-preview.png"
+              src="https://i.postimg.cc/1XDnL1Jn/Paco-Rabanne-Phantom-Eau-de-Toilette.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Google Pixel 7 Pro</h5>
+              <h5 class="card-title">Paco Rabanne Phantom Eau De Toilette</h5>
               <a href="../views/ProductView.vue" class="btn">more info</a>
             </div>
           </div>
@@ -56,5 +56,29 @@
 </script>
 
 <style scoped>
+.cards {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  margin: 4rem;
 
+}
+.card{
+  background-color: #f7dfb1;
+  color: #553a1d;
+  border: 3px solid #553a1d;
+  border-radius: 8px;
+}
+.btn{
+  background-color: #d09869;
+  border: 1px solid#553a1d;
+  border-radius: 5px;
+  color: #f7dfb1;
+}
+.btn:hover{
+  background-color: #f7dfb1;
+  color: #d09869;
+  border: 1px solid #553a1d;
+}
 </style>
